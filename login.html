@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - EmanStore</title>
+    <meta name="description" content="Sign in to your EmanStore account to access your orders, wishlist, and personalized shopping experience.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/auth.css">
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <i class="fa-solid fa-person-half-dress fa-beat"></i>
+                <h1>EmanStore</h1>
+            </div> <!-- logo -->
+            <div class="top-header-links">
+                <a href="login.html">login/</a>
+                <a href="register.html">register</a>
+            </div> <!--top-header-links -->
+        </div> <!-- top-header -->
+    </header>
+    <!--  -->
+    <div class="middle-header">
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div> <!-- search -->
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>0</span>
+        </div> <!-- cart -->
+    </div> <!-- middle-header -->
+    <div class="bottom-header">
+        <nav>
+            <ul class="links">
+                <li class="close"><i class="fa-solid fa-x"></i></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li> <a href="#">Categories</a>
+                <!-- <ul class="drop">
+                    <li><a href="#">mens</a></li>
+                    <li><a href="#">womens</a></li>
+                    <li><a href="#">kids</a></li>
+                </ul></li> -->
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="bar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav> <!-- nav -->
+    </div> <!-- bottom-header -->
+
+    <!-- ===== LOGIN FORM SECTION ===== -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Left decorative panel -->
+            <div class="auth-banner">
+                <div class="banner-content">
+                    <div class="banner-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <h2>Welcome Back!</h2>
+                    <p>Sign in to access your account, track orders, and enjoy a personalized shopping experience.</p>
+                    <div class="banner-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <span>Track Orders</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-heart"></i>
+                            <span>Saved Wishlist</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-tags"></i>
+                            <span>Exclusive Deals</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-circles">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+            </div>
+
+            <!-- Right form panel -->
+            <div class="auth-form-wrapper">
+                <div class="auth-form-header">
+                    <h2>Sign In</h2>
+                    <p>Enter your credentials to continue</p>
+                </div>
+
+                <form id="login-form" class="auth-form" novalidate>
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <input type="email" id="login-email" placeholder="Email Address" required>
+                        <label for="login-email">Email Address</label>
+                        <span class="error-msg" id="login-email-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <label for="login-password">Password</label>
+                        <button type="button" class="toggle-password" id="toggle-login-password" aria-label="Toggle password visibility">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <span class="error-msg" id="login-password-error"></span>
+                    </div>
+<!-- 
+                    <div class="form-options">
+                        <label class="checkbox-label" for="remember-me">
+                            <input type="checkbox" id="remember-me">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div> -->
+
+                    <button type="submit" class="auth-btn" id="login-submit-btn">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-loader" style="display:none;">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+
+                    <div class="divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn" id="google-login-btn" aria-label="Sign in with Google">
+                            <i class="fa-brands fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn" id="facebook-login-btn" aria-label="Sign in with Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn" id="twitter-login-btn" aria-label="Sign in with Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </button>
+                    </div>
+
+                    <p class="auth-switch">
+                        Don't have an account? <a href="register.html">Create Account</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="./JS/login.js">
+
+        // // Toggle password visibility
+        // const toggleBtn = document.getElementById('toggle-login-password');
+        // const passwordInput = document.getElementById('login-password');
+        // toggleBtn.addEventListener('click', () => {
+        //     const type = passwordInput.type === 'password' ? 'text' : 'password';
+        //     passwordInput.type = type;
+        //     toggleBtn.querySelector('i').classList.toggle('fa-eye');
+        //     toggleBtn.querySelector('i').classList.toggle('fa-eye-slash');
+        // });
+
+        // // Basic form validation
+        // document.getElementById('login-form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     let valid = true;
+
+        //     const email = document.getElementById('login-email');
+        //     const password = document.getElementById('login-password');
+        //     const emailError = document.getElementById('login-email-error');
+        //     const passwordError = document.getElementById('login-password-error');
+
+        //     // Reset errors
+        //     emailError.textContent = '';
+        //     passwordError.textContent = '';
+        //     email.parentElement.classList.remove('error');
+        //     password.parentElement.classList.remove('error');
+
+        //     // Email validation
+        //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     if (!email.value.trim()) {
+        //         emailError.textContent = 'Email is required';
+        //         email.parentElement.classList.add('error');
+        //         valid = false;
+        //     } else if (!emailRegex.test(email.value.trim())) {
+        //         emailError.textContent = 'Please enter a valid email';
+        //         email.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     // Password validation
+        //     if (!password.value) {
+        //         passwordError.textContent = 'Password is required';
+        //         password.parentElement.classList.add('error');
+        //         valid = false;
+        //     } else if (password.value.length < 6) {
+        //         passwordError.textContent = 'Password must be at least 6 characters';
+        //         password.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     if (valid) {
+        //         const btn = document.getElementById('login-submit-btn');
+        //         btn.querySelector('.btn-text').style.display = 'none';
+        //         btn.querySelector('.btn-loader').style.display = 'inline-block';
+        //         btn.disabled = true;
+
+        //         // Simulate login
+        //         setTimeout(() => {
+        //             btn.querySelector('.btn-text').style.display = 'inline';
+        //             btn.querySelector('.btn-loader').style.display = 'none';
+        //             btn.disabled = false;
+        //             alert('Login successful! (Demo)');
+        //         }, 1500);
+        //     }
+        // });
+    </script>
+</body>
+</html>

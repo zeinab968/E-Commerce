@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - EmanStore</title>
+    <meta name="description" content="Create your EmanStore account and start shopping the best deals on fashion, electronics, and more.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/auth.css">
+</head>
+<body>
+    <header>
+        <div class="top-header">
+            <div class="logo">
+                <i class="fa-solid fa-person-half-dress fa-beat"></i>
+                <h1>EmanStore</h1>
+            </div> <!-- logo -->
+            <div class="top-header-links">
+                 <a href="login.html">login/</a>
+                <a href="register.html">register</a>
+            </div> <!--top-header-links -->
+        </div> <!-- top-header -->
+    </header>
+    <!--  -->
+    <div class="middle-header">
+        <div class="search">
+            <input type="text" placeholder="Search">
+            <button>Search</button>
+        </div> <!-- search -->
+        <div class="cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span>0</span>
+        </div> <!-- cart -->
+    </div> <!-- middle-header -->
+    <div class="bottom-header">
+        <nav>
+            <ul class="links">
+                <li class="close"><i class="fa-solid fa-x"></i></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li> <a href="#">Categories</a>
+                <!-- <ul class="drop">
+                    <li><a href="#">mens</a></li>
+                    <li><a href="#">womens</a></li>
+                    <li><a href="#">kids</a></li>
+                </ul></li> -->
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="bar">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav> <!-- nav -->
+    </div> <!-- bottom-header -->
+
+    <!-- ===== REGISTER FORM SECTION ===== -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Left decorative panel -->
+            <div class="auth-banner">
+                <div class="banner-content">
+                    <div class="banner-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h2>Join EmanStore</h2>
+                    <p>Create your free account and unlock a world of exclusive fashion, unbeatable deals, and fast delivery.</p>
+                    <div class="banner-features">
+                        <div class="feature-item">
+                            <i class="fa-solid fa-percent"></i>
+                            <span>Member Discounts</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>Flash Sales Access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Secure Shopping</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="banner-circles">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+            </div>
+
+            <!-- Right form panel -->
+            <div class="auth-form-wrapper">
+                <div class="auth-form-header">
+                    <h2>Create Account</h2>
+                    <p>Fill in the details to get started</p>
+                </div>
+                <form id="register-form" class="auth-form" novalidate>
+                    <div class="input-row">
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <input type="text" id="reg-first-name" placeholder="First Name" required>
+                            <label for="reg-first-name">First Name</label>
+                            <span class="error-msg" id="reg-first-name-error"></span>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-icon">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <input type="text" id="reg-last-name" placeholder="Last Name" required>
+                            <label for="reg-last-name">Last Name</label>
+                            <span class="error-msg" id="reg-last-name-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <input type="email" id="reg-email" placeholder="Email Address" required>
+                        <label for="reg-email">Email Address</label>
+                        <span class="error-msg" id="reg-email-error"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input type="password" id="reg-password" placeholder="Password" required>
+                        <label for="reg-password">Password</label>
+                        <button type="button" class="toggle-password" id="toggle-reg-password" aria-label="Toggle password visibility">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <span class="error-msg" id="reg-password-error"></span>
+                    </div>
+
+                    <!-- Password strength indicator -->
+                    <div class="password-strength" id="password-strength">
+                        <div class="strength-bars">
+                            <div class="strength-bar" id="str-bar-1"></div>
+                            <div class="strength-bar" id="str-bar-2"></div>
+                            <div class="strength-bar" id="str-bar-3"></div>
+                            <div class="strength-bar" id="str-bar-4"></div>
+                        </div>
+                        <span class="strength-text" id="strength-text"></span>
+                    </div>
+
+                    <div class="input-group">
+                        <div class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <input type="password" id="reg-confirm-password" placeholder="Confirm Password" required>
+                        <label for="reg-confirm-password">Confirm Password</label>
+                        <button type="button" class="toggle-password" id="toggle-reg-confirm" aria-label="Toggle confirm password visibility">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <span class="error-msg" id="reg-confirm-password-error"></span>
+                    </div>
+
+                    <!-- <div class="form-options">
+                        <label class="checkbox-label" for="agree-terms">
+                            <input type="checkbox" id="agree-terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" class="terms-link">Terms & Conditions</a>
+                        </label>
+                    </div> -->
+
+                    <button type="submit" class="auth-btn" id="register-submit-btn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-loader" style="display:none;">
+                            <i class="fa-solid fa-spinner fa-spin"></i>
+                        </span>
+                    </button>
+
+                    <div class="divider">
+                        <span>or sign up with</span>
+                    </div>
+
+                    <div class="social-login">
+                        <button type="button" class="social-btn" id="google-register-btn" aria-label="Sign up with Google">
+                            <i class="fa-brands fa-google"></i>
+                        </button>
+                        <button type="button" class="social-btn" id="facebook-register-btn" aria-label="Sign up with Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </button>
+                        <button type="button" class="social-btn" id="twitter-register-btn" aria-label="Sign up with Twitter">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </button>
+                    </div>
+
+                    <p class="auth-switch">
+                        Already have an account? <a href="login.html">Sign In</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="./JS/register.js">
+
+        // // Toggle password visibility
+        // function setupToggle(toggleId, inputId) {
+        //     const toggle = document.getElementById(toggleId);
+        //     const input = document.getElementById(inputId);
+        //     toggle.addEventListener('click', () => {
+        //         const type = input.type === 'password' ? 'text' : 'password';
+        //         input.type = type;
+        //         toggle.querySelector('i').classList.toggle('fa-eye');
+        //         toggle.querySelector('i').classList.toggle('fa-eye-slash');
+        //     });
+        // }
+        // setupToggle('toggle-reg-password', 'reg-password');
+        // setupToggle('toggle-reg-confirm', 'reg-confirm-password');
+
+        // // Password strength checker
+        // const regPassword = document.getElementById('reg-password');
+        // regPassword.addEventListener('input', function() {
+        //     const val = this.value;
+        //     let strength = 0;
+        //     if (val.length >= 6) strength++;
+        //     if (val.length >= 10) strength++;
+        //     if (/[A-Z]/.test(val) && /[a-z]/.test(val)) strength++;
+        //     if (/[0-9]/.test(val) && /[^A-Za-z0-9]/.test(val)) strength++;
+
+        //     const bars = document.querySelectorAll('.strength-bar');
+        //     const text = document.getElementById('strength-text');
+        //     const colors = ['#e74c3c', '#f39c12', '#2ecc71', '#0d9488'];
+        //     const labels = ['Weak', 'Fair', 'Good', 'Strong'];
+
+        //     bars.forEach((bar, i) => {
+        //         bar.style.background = i < strength ? colors[strength - 1] : '#1a3d3d';
+        //     });
+
+        //     if (val.length > 0) {
+        //         text.textContent = labels[strength - 1] || 'Too short';
+        //         text.style.color = colors[strength - 1] || '#e74c3c';
+        //     } else {
+        //         text.textContent = '';
+        //     }
+        // });
+
+        // // Form validation
+        // document.getElementById('register-form').addEventListener('submit', function(e) {
+        //     e.preventDefault();
+        //     let valid = true;
+
+        //     const fields = {
+        //         firstName: { el: document.getElementById('reg-first-name'), errorEl: document.getElementById('reg-first-name-error') },
+        //         lastName: { el: document.getElementById('reg-last-name'), errorEl: document.getElementById('reg-last-name-error') },
+        //         email: { el: document.getElementById('reg-email'), errorEl: document.getElementById('reg-email-error') },
+        //         phone: { el: document.getElementById('reg-phone'), errorEl: document.getElementById('reg-phone-error') },
+        //         password: { el: document.getElementById('reg-password'), errorEl: document.getElementById('reg-password-error') },
+        //         confirmPassword: { el: document.getElementById('reg-confirm-password'), errorEl: document.getElementById('reg-confirm-password-error') }
+        //     };
+
+        //     // Reset all errors
+        //     Object.values(fields).forEach(f => {
+        //         f.errorEl.textContent = '';
+        //         f.el.parentElement.classList.remove('error');
+        //     });
+
+        //     // First name
+        //     if (!fields.firstName.el.value.trim()) {
+        //         fields.firstName.errorEl.textContent = 'First name is required';
+        //         fields.firstName.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     // Last name
+        //     if (!fields.lastName.el.value.trim()) {
+        //         fields.lastName.errorEl.textContent = 'Last name is required';
+        //         fields.lastName.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     // Email
+        //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     if (!fields.email.el.value.trim()) {
+        //         fields.email.errorEl.textContent = 'Email is required';
+        //         fields.email.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     } else if (!emailRegex.test(fields.email.el.value.trim())) {
+        //         fields.email.errorEl.textContent = 'Please enter a valid email';
+        //         fields.email.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     // Password
+        //     if (!fields.password.el.value) {
+        //         fields.password.errorEl.textContent = 'Password is required';
+        //         fields.password.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     } else if (fields.password.el.value.length < 6) {
+        //         fields.password.errorEl.textContent = 'Password must be at least 6 characters';
+        //         fields.password.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     // Confirm password
+        //     if (!fields.confirmPassword.el.value) {
+        //         fields.confirmPassword.errorEl.textContent = 'Please confirm your password';
+        //         fields.confirmPassword.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     } else if (fields.confirmPassword.el.value !== fields.password.el.value) {
+        //         fields.confirmPassword.errorEl.textContent = 'Passwords do not match';
+        //         fields.confirmPassword.el.parentElement.classList.add('error');
+        //         valid = false;
+        //     }
+
+        //     // Terms
+        //     const terms = document.getElementById('agree-terms');
+        //     if (!terms.checked) {
+        //         alert('Please agree to the Terms & Conditions');
+        //         valid = false;
+        //     }
+
+        //     if (valid) {
+        //         const btn = document.getElementById('register-submit-btn');
+        //         btn.querySelector('.btn-text').style.display = 'none';
+        //         btn.querySelector('.btn-loader').style.display = 'inline-block';
+        //         btn.disabled = true;
+
+        //         setTimeout(() => {
+        //             btn.querySelector('.btn-text').style.display = 'inline';
+        //             btn.querySelector('.btn-loader').style.display = 'none';
+        //             btn.disabled = false;
+        //             alert('Account created successfully! (Demo)');
+        //         }, 1500);
+        //     }
+        // });
+    </script>
+</body>
+</html>
