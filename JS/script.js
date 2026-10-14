@@ -99,6 +99,7 @@ function renderCart() {
         const decrease = document.createElement("button");
         decrease.type = "button";
         decrease.textContent = "−";
+        decrease.disabled = item.quantity <= 1;
         decrease.setAttribute("aria-label", `Remove one ${productName(item.product)}`);
         decrease.dataset.cartAction = "decrease";
         decrease.dataset.cartIndex = String(index);
@@ -142,7 +143,8 @@ if (cartButton && cartPanel) {
     });
 
     document.addEventListener("click", (event) => {
-        if (!event.target.closest(".cart, .added-items")) {
+        const clickPath = event.composedPath();
+        if (!clickPath.includes(cartButton) && !clickPath.includes(cartPanel)) {
             cartPanel.classList.remove("open");
             cartButton.setAttribute("aria-expanded", "false");
         }
@@ -156,7 +158,7 @@ if (cartButton && cartPanel) {
         if (!item) return;
 
         if (actionButton.dataset.cartAction === "increase") item.quantity += 1;
-        if (actionButton.dataset.cartAction === "decrease") item.quantity -= 1;
+        if (actionButton.dataset.cartAction === "decrease" && item.quantity > 1) item.quantity -= 1;
         if (actionButton.dataset.cartAction === "remove" || item.quantity < 1) cartItems.splice(index, 1);
         saveCart();
     });
@@ -235,8 +237,9 @@ if (cardsContainer) {
         return allProducts.filter((product) => {
             const searchableText = [
                 productName(product),
-                product.category,
-                product.subCategory,
+                product.category || "",
+                product.subCategory || "",
+                product.description || "",
                 ...(Array.isArray(product.keywords) ? product.keywords : [])
             ].join(" ").toLowerCase();
             const matchesSearch = !query || searchableText.includes(query);
