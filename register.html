@@ -8,19 +8,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/auth.css">
+    <link rel="stylesheet" href="./css/theme.css">
+    <link rel="stylesheet" href="./css/account.css">
 </head>
-<body>
+<body class="auth-page">
     <header>
         <div class="top-header">
-            <div class="logo">
-                <i class="fa-solid fa-person-half-dress fa-beat"></i>
+            <a class="logo" href="index.html" aria-label="EmanStore home">
+                <i class="fa-solid fa-person-half-dress"></i>
                 <h1>EmanStore</h1>
-            </div> <!-- logo -->
+            </a>
             <div class="top-header-links">
-                 <a href="login.html">login/</a>
-                <a href="register.html">register</a>
+                <a href="index.html">Continue shopping</a>
             </div> <!--top-header-links -->
         </div> <!-- top-header -->
     </header>
@@ -38,7 +37,7 @@
     <div class="bottom-header">
         <nav>
             <ul class="links">
-                <li class="close"><i class="fa-solid fa-x"></i></li>
+                <li><button class="close" type="button" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#">Products</a></li>
                 <li> <a href="#">Categories</a>
@@ -49,9 +48,9 @@
                 </ul></li> -->
                 <li><a href="#">Contact</a></li>
             </ul>
-            <div class="bar">
+            <button class="bar" type="button" aria-label="Open menu" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
         </nav> <!-- nav -->
     </div> <!-- bottom-header -->
 
@@ -172,22 +171,6 @@
                             <i class="fa-solid fa-spinner fa-spin"></i>
                         </span>
                     </button>
-
-                    <div class="divider">
-                        <span>or sign up with</span>
-                    </div>
-
-                    <div class="social-login">
-                        <button type="button" class="social-btn" id="google-register-btn" aria-label="Sign up with Google">
-                            <i class="fa-brands fa-google"></i>
-                        </button>
-                        <button type="button" class="social-btn" id="facebook-register-btn" aria-label="Sign up with Facebook">
-                            <i class="fa-brands fa-facebook-f"></i>
-                        </button>
-                        <button type="button" class="social-btn" id="twitter-register-btn" aria-label="Sign up with Twitter">
-                            <i class="fa-brands fa-x-twitter"></i>
-                        </button>
-                    </div>
 
                     <p class="auth-switch">
                         Already have an account? <a href="login.html">Sign In</a>
